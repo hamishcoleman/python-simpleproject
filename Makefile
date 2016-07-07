@@ -35,3 +35,7 @@ test:
 
 cover:
 	./run_tests.py cover
+
+clean:
+	rm -rf htmlcov .coverage
+	find . -name '*.pyc' -print0 |xargs -0 rm
