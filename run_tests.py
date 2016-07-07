@@ -17,7 +17,7 @@ from coverage import Coverage
 
 if __name__ == '__main__':
     if len(sys.argv)>1 and sys.argv[1] == 'cover':
-        cover = Coverage(branch=True)
+        cover = Coverage(branch=True,auto_data=True)
     else:
         cover = False
 
