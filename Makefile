@@ -3,8 +3,7 @@ NAME := toil
 INSTALLROOT := installdir
 INSTALLDIR := $(INSTALLROOT)/$(NAME)
 
-#describe := $(shell git describe --dirty)
-describe := fixme-when-gitified
+describe := $(shell git describe --dirty)
 tarfile := $(NAME)-$(describe).tar.gz
 
 all:
