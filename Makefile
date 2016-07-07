@@ -1,5 +1,5 @@
 
-NAME := toil
+NAME := theprogram
 INSTALLROOT := installdir
 INSTALLDIR := $(INSTALLROOT)/$(NAME)
 
