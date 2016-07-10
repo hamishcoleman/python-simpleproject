@@ -1,7 +1,7 @@
 
 NAME := theprogram
-INSTALLROOT := installdir
-INSTALLDIR := $(INSTALLROOT)/$(NAME)
+DESTDIR ?= installdir
+INSTALLDIR := $(DESTDIR)/$(NAME)
 
 describe := $(shell git describe --dirty)
 tarfile := $(NAME)-$(describe).tar.gz
@@ -28,7 +28,7 @@ tar:    $(tarfile)
 
 $(tarfile):
 	$(MAKE) install
-	tar -v -c -z -C $(INSTALLROOT) -f $(tarfile) .
+	tar -v -c -z -C $(DESTDIR) -f $(tarfile) .
 
 test:
 	./run_tests.py
