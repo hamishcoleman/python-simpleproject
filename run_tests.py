@@ -1,23 +1,30 @@
 #!/usr/bin/env python
 
+""" This is a test harness - it finds all the test scripts in this dir and in
+    the lib dir and runs the tests.  It optionally does a code coverage check
+    as well
+"""
+
 import os
 import sys
 
 # Ensure that we look for any modules in our local lib dir.  This allows simple
 # testing and development use.  It also does not break the case where the lib
 # has been installed properly on the normal sys.path
-sys.path.insert (0,
-    os.path.join(os.path.dirname(os.path.abspath(__file__)),'lib')
-)
+sys.path.insert(0,
+                os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lib')
+               )
 # I would use site.addsitedir, but it does an append, not insert
-
 
 import unittest
 from coverage import Coverage
 
-if __name__ == '__main__':
-    if len(sys.argv)>1 and sys.argv[1] == 'cover':
-        cover = Coverage(branch=True,auto_data=True)
+def main():
+    """ The main function, mainly functioning to do the main functional work
+        (thanks pylint)
+    """
+    if len(sys.argv) > 1 and sys.argv[1] == 'cover':
+        cover = Coverage(branch=True, auto_data=True)
     else:
         cover = False
 
@@ -29,7 +36,7 @@ if __name__ == '__main__':
         cover.start()
 
     tests = loader.discover('.')
-    tests_lib = loader.discover('lib',top_level_dir='lib')
+    tests_lib = loader.discover('lib', top_level_dir='lib')
     tests.addTests(tests_lib)
     runner.run(tests)
 
@@ -42,4 +49,7 @@ if __name__ == '__main__':
         except:
             pass
         cover.report(show_missing=True)
+
+if __name__ == '__main__':
+    main()
 
