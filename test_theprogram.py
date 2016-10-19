@@ -5,6 +5,7 @@
 
 import unittest
 
+
 class TestStringMethods(unittest.TestCase):
     """ This is the class that the test harness looks for tests in
     """
@@ -31,4 +32,3 @@ class TestStringMethods(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
