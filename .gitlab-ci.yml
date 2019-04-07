@@ -1,0 +1,6 @@
+test:
+    image: python:2.7
+    script:
+        - pip install flake8 coverage
+        - make test
+
