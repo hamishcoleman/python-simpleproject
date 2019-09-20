@@ -7,6 +7,8 @@
 
 import os
 import sys
+import unittest
+from coverage import Coverage
 
 # Ensure that we look for any modules in our local lib dir.  This allows simple
 # testing and development use.  It also does not break the case where the lib
@@ -15,9 +17,6 @@ sys.path.insert(0,
                 os.path.join(os.path.dirname(os.path.abspath(__file__)),
                              'lib'))
 # I would use site.addsitedir, but it does an append, not insert
-
-import unittest  # noqa
-from coverage import Coverage  # noqa
 
 
 def main():
@@ -52,7 +51,7 @@ def main():
         # (and additionally, that thing is not packaged for debian elsewhere)
         try:
             cover.html_report()
-        except:
+        except: # noqa
             pass
         percent = cover.report(show_missing=True)
 
@@ -63,6 +62,7 @@ def main():
 
     if not result.wasSuccessful():
         exit(1)
+
 
 if __name__ == '__main__':
     main()

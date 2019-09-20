@@ -15,7 +15,7 @@ sys.path.insert(0,
 # I would use site.addsitedir, but it does an append, not insert
 
 # Import modules from our local dev dir
-import example
+import example # noqa
 
 if __name__ == '__main__':
     print(example.hellostr())

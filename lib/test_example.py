@@ -4,6 +4,7 @@
 import unittest
 import example
 
+
 class Example(unittest.TestCase):
     """ This is the class that the test system looks for tests in
     """
@@ -17,4 +18,3 @@ class Example(unittest.TestCase):
         """ Be sure to check that hellostr is hello
         """
         self.assertEqual(example.hellostr(), 'hello')
-
