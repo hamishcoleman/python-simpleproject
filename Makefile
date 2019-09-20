@@ -37,9 +37,12 @@ cover:
 	./run_tests.py cover
 
 # pylint is a little too opinionated to be used by default in the test target
-# FIXME: configure pylint to use the correct sys.path
 lint:
 	pylint3 *.py lib/*
+
+# an alternative to pylint is using flake8:
+flake8:
+	flake8
 
 clean:
 	rm -rf htmlcov .coverage
