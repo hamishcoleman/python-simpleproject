@@ -14,7 +14,7 @@ def hellostr():
     return "hello"
 
 
-def add(a, b):
+def add(param1, param2):
     """ In case we forget basic mathematics, provide an addition function
     """
-    return a+b
+    return param1+param2

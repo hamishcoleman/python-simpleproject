@@ -39,7 +39,7 @@ cover:
 # pylint is a little too opinionated to be used by default in the test target
 # FIXME: configure pylint to use the correct sys.path
 lint:
-	pylint *.py lib/*
+	pylint3 *.py lib/*
 
 clean:
 	rm -rf htmlcov .coverage

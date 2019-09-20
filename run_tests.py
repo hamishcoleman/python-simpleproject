@@ -51,8 +51,12 @@ def main():
         # (and additionally, that thing is not packaged for debian elsewhere)
         try:
             cover.html_report()
-        except: # noqa
+        except: # noqa pylint: disable=bare-except
             pass
+        # TODO - reconfirm that this packaging issue is still the case
+        #        if it is not, remove the try..except
+        #        if it is, add the specific exception
+
         percent = cover.report(show_missing=True)
 
         if min_percent > percent:
