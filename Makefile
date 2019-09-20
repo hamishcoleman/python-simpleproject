@@ -16,8 +16,8 @@ all:
 # required for functionality...)
 # 
 build-dep:
-	apt-get install python2.7
-	apt-get install python-coverage
+	apt-get install python3
+	apt-get install python3-coverage
 
 install:
 	mkdir -p $(INSTALLDIR)
