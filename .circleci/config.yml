@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+    test:
+        machine:
+            image: ubuntu-2004:202010-01
+        steps:
+            - checkout
+            - run: sudo make build-dep
+            - run: make test
+
+workflows:
+    main:
+        jobs:
+            - test
