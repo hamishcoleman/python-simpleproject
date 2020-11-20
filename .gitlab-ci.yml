@@ -5,5 +5,5 @@
 test:
     image: debian:stable
     script:
-        - sudo make build-dep
+        - make build-dep
         - make test
