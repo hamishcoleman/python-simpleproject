@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+    check:
+        name: make test
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Install Dependencies
+              run: sudo make build-dep
+            - name: Run tests
+              run: make test
