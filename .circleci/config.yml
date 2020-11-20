@@ -1,3 +1,8 @@
+---
+# CI config for https://circleci.com
+# - free accounts, ~2500 minutes per week included
+#   (free accounts are limited to 1 concurrent job)
+
 version: 2.1
 
 jobs:

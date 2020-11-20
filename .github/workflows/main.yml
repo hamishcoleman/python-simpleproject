@@ -1,3 +1,7 @@
+---
+# CI config for https://github.com
+# - free accounts, TODO - document limits
+
 name: CI
 
 on: [push]

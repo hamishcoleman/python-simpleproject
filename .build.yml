@@ -1,5 +1,6 @@
 ---
-# sourcehut build manifest
+# CI config for https://builds.sr.ht/
+# - payment not required during their beta
 
 image: debian/stable
 arch: amd64

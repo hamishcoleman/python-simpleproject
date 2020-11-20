@@ -1,3 +1,8 @@
+---
+# CI config for https://travis-ci.com/
+# - free accounts, ~1000 minutes of build included
+#   (possibly a once-off trial amount of credits)
+
 language: python
 
 install:
