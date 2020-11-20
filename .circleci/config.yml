@@ -6,6 +6,7 @@ jobs:
             image: ubuntu-2004:202010-01
         steps:
             - checkout
+            - run: sudo apt-get update
             - run: sudo make build-dep
             - run: make test
 
