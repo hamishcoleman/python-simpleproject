@@ -8,6 +8,7 @@ jobs:
             - checkout
             - run: sudo apt-get update
             - run: sudo make build-dep
+            - run: python -m coverage help
             - run: make test
 
 workflows:
