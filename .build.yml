@@ -4,12 +4,9 @@
 image: debian/stable
 arch: amd64
 
-# TODO: is there a way to say "checkout the repo this manifest is part of",
-# instead of hardcoding the source URL
-#sources:
-#    - https://github.com/hamishcoleman/python-simpleproject
-
 tasks:
+    - checkout: |
+        git clone https://github.com/$GITHUB_REPO
     - build-dep: |
         cd python-simpleproject
         sudo make build-dep
