@@ -16,8 +16,8 @@ all:
 # required for functionality...)
 # 
 build-dep:
-	apt-get install python3
-	apt-get install python3-coverage
+	apt-get install -y python3
+	apt-get install -y python3-coverage
 
 install:
 	mkdir -p $(INSTALLDIR)
