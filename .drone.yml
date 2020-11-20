@@ -1,0 +1,15 @@
+---
+# CI config for https://cloud.drone.io/
+# - free accounts available
+
+kind: pipeline
+name: default
+
+steps:
+    - name: test
+      image: debian:stable
+      commands:
+          - apt-get update
+          - apt-get install -y make
+          - make build-dep
+          - make test
