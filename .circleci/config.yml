@@ -4,13 +4,13 @@ jobs:
     test:
         machine:
             image: ubuntu-2004:202010-01
-        environment:
-            PATH: /usr/bin:/bin:/usr/sbin:/sbin
         steps:
             - checkout
             - run: sudo apt-get update
             - run: sudo make build-dep
             - run: make test
+              environment:
+                PATH: /usr/bin:/bin:/usr/sbin:/sbin
 
 workflows:
     main:
