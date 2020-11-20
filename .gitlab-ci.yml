@@ -1,6 +1,12 @@
+---
+# CI config for https://gitlab.com/
+# - free accounts available, TODO: document the usage limits
+
+# TODO:
+# - convert this to a generic debian-based workflow
+
 test:
     image: python:3
     script:
         - pip install flake8 coverage
         - make test
-
