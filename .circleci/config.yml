@@ -8,9 +8,10 @@ jobs:
             - checkout
             - run: sudo apt-get update
             - run: sudo make build-dep
-            - run: make test
-              environment:
-                PATH: /usr/bin:/bin:/usr/sbin:/sbin
+            - run:
+                command: make test
+                environment:
+                    PATH: /usr/bin:/bin:/usr/sbin:/sbin
 
 workflows:
     main:
