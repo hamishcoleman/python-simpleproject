@@ -5,6 +5,7 @@
 test:
     image: debian:stable
     script:
+        - apt-get update
         - apt-get install -y make
         - make build-dep
         - make test
