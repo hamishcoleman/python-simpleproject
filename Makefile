@@ -19,6 +19,7 @@ build-dep:
 	apt-get install -y \
 	    python3 python3-coverage \
 	    flake8 \
+	    isort \
 
 install:
 	mkdir -p $(INSTALLDIR)
@@ -38,7 +39,7 @@ cover:
 	./run_tests.py cover
 
 .PHONY: lint
-lint: lint.flake8
+lint: lint.flake8 lint.isort
 
 # pylint is a little too opinionated to be used by default in the test target
 pylint:
@@ -48,6 +49,10 @@ pylint:
 .PHONY: lint.flake8
 lint.flake8:
 	flake8
+
+.PHONY: lint.isort
+lint.isort:
+	isort --check-only .
 
 clean:
 	rm -rf htmlcov .coverage
