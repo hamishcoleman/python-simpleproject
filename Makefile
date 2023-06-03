@@ -16,8 +16,9 @@ all:
 # required for functionality...)
 # 
 build-dep:
-	apt-get install -y python3
-	apt-get install -y python3-coverage
+	apt-get install -y \
+	    python3 python3-coverage \
+	    flake8 \
 
 install:
 	mkdir -p $(INSTALLDIR)
@@ -36,12 +37,16 @@ test:
 cover:
 	./run_tests.py cover
 
+.PHONY: lint
+lint: lint.flake8
+
 # pylint is a little too opinionated to be used by default in the test target
-lint:
+pylint:
 	pylint3 *.py lib/*
 
 # an alternative to pylint is using flake8:
-flake8:
+.PHONY: lint.flake8
+lint.flake8:
 	flake8
 
 clean:
