@@ -20,6 +20,7 @@ build-dep:
 	    python3 python3-coverage \
 	    flake8 \
 	    isort \
+	    pydocstyle \
 
 install:
 	mkdir -p $(INSTALLDIR)
@@ -39,7 +40,7 @@ cover:
 	./run_tests.py cover
 
 .PHONY: lint
-lint: lint.flake8 lint.isort
+lint: lint.flake8 lint.isort lint.pydocstyle
 
 # pylint is a little too opinionated to be used by default in the test target
 pylint:
@@ -53,6 +54,10 @@ lint.flake8:
 .PHONY: lint.isort
 lint.isort:
 	isort --check-only .
+
+.PHONY: lint.pydocstyle
+lint.pydocstyle:
+	pydocstyle
 
 clean:
 	rm -rf htmlcov .coverage

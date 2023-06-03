@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-""" This is an example of the actual program
-"""
+"""This is an example of the actual program."""
 
 import os
 import sys

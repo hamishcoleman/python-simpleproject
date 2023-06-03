@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
-""" This is a test harness - it finds all the test scripts in this dir and in
-    the lib dir and runs the tests.  It optionally does a code coverage check
-    as well
+"""This is a test harness.
+
+it finds all the test scripts in this dir and in
+the lib dir and runs the tests.  It optionally does a code coverage check
+as well
 """
 
 import os
@@ -21,9 +23,7 @@ sys.path.insert(0,
 
 
 def main():
-    """ The main function, mainly functioning to do the main functional work
-        (thanks pylint)
-    """
+    """Do the main test logic."""
     if len(sys.argv) > 1 and sys.argv[1] == 'cover':
         # FIXME - there are enough args now to need an arg parser
         cover = Coverage(branch=True, auto_data=True)
